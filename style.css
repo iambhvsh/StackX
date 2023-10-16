@@ -1,0 +1,146 @@
+body {
+  background: #000; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  color: var(--color);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50vw;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.right {
+  text-align: right;
+  width: auto;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.stack span {
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  font-size: 3rem;
+  --stack-height: calc(100% / var(--stacks) - 1px);
+  --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+  --clip-top: calc(var(--stack-height) * var(--index));
+  --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+  clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 1s ease infinite 1s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px; }
+.stack span:nth-child(even) { --glitch-translate: -8px; }
+
+@keyframes stack {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+    text-shadow: -2px 3px 0 greenyellow, 2px -3px 0 greenyellow;
+  };
+  60% {
+    opacity: 0.5;
+    transform: translateX(50%);
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+    text-shadow: 2px -3px 0 greenyellow, -2px 3px 0 greenyellow;
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -2px 3px 0 orchid, 2px -3px 0 orange;
+    transform: translate(var(--glitch-translate));
+  }
+  2% {
+    text-shadow: 2px -3px 0 orange, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
+}
+
+.search-bar {
+  color: #fff; 
+  width: auto; 
+  text-align: center; 
+  margin-top: 40px;
+}
+
+.about {
+  color: #fff;
+  word-wrap: break-word;
+  border: 2px solid #333;
+  border-radius: 10px;
+  margin: 1rem;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.gcse-search {
+  background: #000;
+  height: 50px;
+  border: none;
+  margin-top: 5rem;
+}
+
+input {
+  color: #fff;
+}
+
+.first-line {
+  color: #fff;
+  transition: ease-in 6s; 
+}
+
+::selection {
+  color: #007aff;
+  border-radius: 50px;
+  font-size: 60px;
+}
+
+.about-text {
+  margin: 1rem;
+}
+
+
+.links:hover {
+  color: darkblue;
+  font-size: 20px;
+}
+input {
+  color: #000;
+}
+#copyBtn {
+  background: #007aff;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 100px;
+  font-size: 20px;
+  width: 65px;
+  height: 30px;
+  position: fixed;
+  z-index: 999;
+  bottom: 10px;
+  display: flex;
+}
