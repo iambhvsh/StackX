@@ -1,89 +1,81 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" />
+    <title id="pageTitle">StackX</title>
+    <meta name="title" content="StackX">
+    <style>
+        /* Custom styles for the Google Custom Search Engine results */
+        .gcse-searchresults-only .gsc-webResult .gsc-result {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e7eb; /* Tailwind gray-200 */
+        }
 
-<meta charset="UTF-8">
+        .gcse-searchresults-only .gs-image img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+        .gcse-searchresults-only .gsc-thumbnail-inside .gs-title,
+        .gcse-searchresults-only .gs-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1f2937; /* Tailwind gray-800 */
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+        .gcse-searchresults-only .gs-bidi-start-align {
+            font-size: 1rem;
+            color: #6b7280; /* Tailwind gray-500 */
+        }
 
-<title id="pageTitle">StackX</title>
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .gcse-searchresults-only .gsc-webResult .gsc-result {
+                padding: 0.5rem;
+            }
 
-<meta name="title" content="StackX">
-
-<link rel="stylesheet" href="style.css">
-
+            .gcse-searchresults-only .gs-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script async src="https://cse.google.com/cse.js?cx=868dfc4dadf904776"></script>
 </head>
 
-<body>
+<body class="bg-gray-100 flex flex-col items-center min-h-screen">
+    <div class="search-bar mt-10">
+        <div class="container mx-auto text-center">
+            <div class="stack flex justify-center space-x-4">
+                <span class="text-4xl font-bold text-red-600">StackX 🔥</span>
+                <span class="text-4xl font-bold text-red-600">StackX 🔥</span>
+                <span class="text-4xl font-bold text-red-600">StackX 🔥</span>
+            </div>
+        </div>
+    </div>
 
-<script async src="https://cse.google.com/cse.js?cx=868dfc4dadf904776">
-</script>
+    <div class="gcse-search mt-10 w-full max-w-xl mx-auto"></div>
 
-<div class="search-bar">
+    <div class="fixed bottom-4 flex justify-center space-x-6 p-4 bg-white bg-opacity-80 backdrop-blur-md rounded-full shadow-lg z-50">
+        <a href="https://github.com/iambhvsh" class="links font-bold text-2xl text-gray-800 hover:text-black">
+            <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://instagram.com/iambhvsh" class="links font-bold text-2xl text-pink-600 hover:text-pink-800">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <button id="shareBtn" class="text-blue-500 hover:text-blue-700 text-2xl focus:outline-none">
+            <i class="fa-solid fa-share"></i>
+        </button>
+    </div>
 
-<div class="container">
-
-<div class="stack" style="--stacks: 3;">
-
-<span style="--index: 0;">
-
-StackX 🔥
-
-</span>
-
-<span style="--index: 1;">
-
-StackX 🔥
-
-</span>
-
-<span style="--index: 2;">
-
-StackX 🔥
-
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="gcse-search"></div>
-
-<div style="justify-content: display: flex; margin: 1.5rem; position: fixed; z-index: 9999%; bottom: 1px; background: rgba(0,0,0,0.1); backdrop-filter: blur(50px); border-radius: 100px;">
-
-<a href="https://github.com/iambhvsh" class="links" style="font-weight: bold; font-size: 30px; margin-right: 1rem; margin-left: 1rem; color: whitesmoke; text-decoration: none;">
-
-<i class="fa-brands fa-github"></i>
-
-</a>
-
-<a href="https://instagram.com/iambhvsh" class="links" style="font-weight: bold; font-size: 30px; margin-right: 1rem; color: hotpink; text-decoration: none;">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-<button id="shareBtn" style="background: none; color: #007aff; border: none; font-size: 30px; margin-right: 1rem;">
-
-<i class="fa-solid fa-share"></i>
-
-</button>
-
-
-</center>
-
-<script src="script.js"></script>
-
-<script src="https://kit.fontawesome.com/4ba3c023de.js" crossorigin="anonymous"></script>
-
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/4ba3c023de.js" crossorigin="anonymous"></script>
 </body>
 
-  </html>
+</html>
